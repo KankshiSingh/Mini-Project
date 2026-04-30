@@ -1,0 +1,125 @@
+<header class="navbar" [class.scrolled]="scrolled()">
+  <div class="navbar-inner container">
+
+    <!-- Brand -->
+    <a routerLink="/" class="brand" (click)="closeMenu()">
+      <span class="brand-icon"></span>
+      <span class="brand-text">Book<span class="brand-accent">Revive</span></span>
+    </a>
+
+    <!-- Desktop Nav Links -->
+    <nav class="nav-links" role="navigation">
+      @for (link of navLinks; track link.route) {
+        <a
+          [routerLink]="link.route"
+          routerLinkActive="active"
+          class="nav-link"
+          (click)="closeMenu()">
+          <span class="nav-link-icon">{{ link.icon }}</span>
+          {{ link.label }}
+        </a>
+      }
+    </nav>
+
+    <!-- Desktop Actions -->
+    <div class="nav-actions">
+
+      <!-- Search toggle -->
+      <button class="icon-btn" (click)="toggleSearch()" title="Search">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+        </svg>
+      </button>
+
+      <!-- Cart -->
+      <a routerLink="/cart" class="icon-btn cart-btn" title="Cart">
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+          <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/>
+          <path d="M16 10a4 4 0 0 1-8 0"/>
+        </svg>
+        @if (cartCount() > 0) {
+          <span class="cart-badge">{{ cartCount() }}</span>
+        }
+      </a>
+
+      @if (isLoggedIn()) {
+        <!-- Profile dropdown -->
+        <div class="profile-menu">
+          <button class="profile-btn">
+            <div class="avatar">{{ (currentUser()?.name || 'U').charAt(0) }}</div>
+            <span class="profile-name">{{ currentUser()?.name || 'User' }}</span>
+            <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <polyline points="6 9 12 15 18 9"/>
+            </svg>
+          </button>
+          <div class="dropdown">
+            <a routerLink="/profile" class="dropdown-item">
+              <span></span> My Profile
+            </a>
+            <a routerLink="/add-book" class="dropdown-item">
+              <span>️</span> My Listings
+            </a>
+            <div class="dropdown-divider"></div>
+            <button class="dropdown-item danger" (click)="logout()">
+              <span></span> Sign Out
+            </button>
+          </div>
+        </div>
+      } @else {
+        <a routerLink="/login" class="btn btn-outline btn-sm">Sign In</a>
+        <a routerLink="/register" class="btn btn-primary btn-sm">Register</a>
+      }
+    </div>
+
+    <!-- Hamburger -->
+    <button class="hamburger" (click)="toggleMenu()" [class.open]="menuOpen()" aria-label="Menu">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+
+  <!-- Search Bar -->
+  @if (searchOpen()) {
+    <div class="search-bar">
+      <div class="container">
+        <div class="search-input-wrap">
+          <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="11" cy="11" r="8"/><path d="m21 21-4.35-4.35"/>
+          </svg>
+          <input
+            #searchInput
+            type="text"
+            placeholder="Search books by title, author, ISBN..."
+            class="search-input"
+            (keyup.enter)="toggleSearch()"
+            (keyup.escape)="toggleSearch()"
+            autofocus />
+          <button class="search-close" (click)="toggleSearch()">✕</button>
+        </div>
+      </div>
+    </div>
+  }
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" [class.open]="menuOpen()">
+    <nav class="mobile-nav">
+      @for (link of navLinks; track link.route) {
+        <a
+          [routerLink]="link.route"
+          routerLinkActive="active"
+          class="mobile-nav-link"
+          (click)="closeMenu()">
+          <span>{{ link.icon }}</span> {{ link.label }}
+        </a>
+      }
+      <div class="mobile-divider"></div>
+      @if (isLoggedIn()) {
+        <a routerLink="/profile" class="mobile-nav-link" (click)="closeMenu()"><span></span> Profile</a>
+        <a routerLink="/cart"    class="mobile-nav-link" (click)="closeMenu()"><span></span> Cart ({{ cartCount() }})</a>
+        <button class="mobile-nav-link danger" (click)="logout()"><span></span> Sign Out</button>
+      } @else {
+        <a routerLink="/login"    class="mobile-nav-link" (click)="closeMenu()">Sign In</a>
+        <a routerLink="/register" class="mobile-nav-link" (click)="closeMenu()">Register</a>
+      }
+    </nav>
+  </div>
+</header>

@@ -1,0 +1,32 @@
+<div class="login-container">
+
+  <div class="login-card">
+
+    <h1 class="title">Book Revive</h1>
+    <p class="subtitle">
+      Buy, sell & donate second-hand books easily.  
+      Share knowledge and make learning affordable.
+    </p>
+
+    <div class="form">
+      <div class="input-group">
+        <input [(ngModel)]="email" placeholder="Email" class="input" [class.error-input]="emailError()" type="email" required>
+        @if (emailError()) { <p class="error-text">{{ emailError() }}</p> }
+      </div>
+      
+      <div class="input-group">
+        <input [(ngModel)]="password" type="password" placeholder="Password" class="input" [class.error-input]="passwordError()" required>
+        @if (passwordError()) { <p class="error-text">{{ passwordError() }}</p> }
+      </div>
+
+      <button (click)="login()" class="login-btn">Login</button>
+
+      <p class="register-text">
+        New here?
+        <a routerLink="/register">Create an account</a>
+      </p>
+    </div>
+
+  </div>
+
+</div>

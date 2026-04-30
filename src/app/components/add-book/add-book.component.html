@@ -1,0 +1,46 @@
+<div class="page-container">
+
+  <h1>Add Your Book</h1>
+  <p>Choose whether you want to sell or donate your book</p>
+
+  <!-- TWO BOXES -->
+  <div class="choice-container">
+
+    <div class="choice-card sell-card" (click)="selectType('sell')">
+      <h2>Sell Book</h2>
+      <p>Sell your used books and earn money.</p>
+    </div>
+
+    <div class="choice-card donate-card" (click)="selectType('donate')">
+      <h2>Donate Book</h2>
+      <p>Help others by donating your books.</p>
+    </div>
+
+  </div>
+
+  <!-- FORM -->
+  <div class="form-section" *ngIf="type">
+
+    <h2 *ngIf="type=='sell'">Sell Your Book</h2>
+    <h2 *ngIf="type=='donate'">Donate Your Book</h2>
+
+    <input [(ngModel)]="bookTitle" placeholder="Book Title">
+
+    <input [(ngModel)]="author" placeholder="Author">
+
+    <select [(ngModel)]="condition" (change)="estimatePrice()" *ngIf="type=='sell'">
+      <option value="">Select Condition</option>
+      <option value="new">Almost New</option>
+      <option value="good">Good Condition</option>
+      <option value="old">Old</option>
+    </select>
+
+    <div class="price-box">
+      Estimated Price: ₹{{price}}
+    </div>
+
+    <button (click)="submitBook()">Submit Book</button>
+
+  </div>
+
+</div>

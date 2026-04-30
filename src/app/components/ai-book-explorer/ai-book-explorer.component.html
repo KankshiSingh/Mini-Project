@@ -1,0 +1,42 @@
+<div class="ai-container">
+
+<h1>AI Book Explorer</h1>
+
+<p>
+Search any book and explore details instantly using AI powered search.
+</p>
+
+<div class="search-box">
+
+<input
+[(ngModel)]="searchText"
+placeholder="Search any book..."
+>
+
+<button (click)="searchBooks()">Search</button>
+
+</div>
+
+<div class="books-grid">
+
+<div class="book-card" *ngFor="let book of books">
+
+<img
+*ngIf="book.volumeInfo.imageLinks"
+[src]="book.volumeInfo.imageLinks.thumbnail"
+>
+
+<h3>{{book.volumeInfo.title}}</h3>
+
+<p><strong>Author:</strong>
+{{book.volumeInfo.authors?.join(', ')}}</p>
+
+<p class="desc">
+{{book.volumeInfo.description | slice:0:120}}...
+</p>
+
+</div>
+
+</div>
+
+</div>

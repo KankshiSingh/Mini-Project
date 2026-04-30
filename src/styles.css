@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  /* Pink Theme Colors */
+  --primary: #da8fe3;
+  --primary-light: #eab4f0;
+  --primary-dark: #c269cd;
+  
+  --secondary: #fbc2eb;
+  --accent: #ff8fab;
+  --accent-dark: #ff4d6d;
+  
+  --success: #10b981;
+  --warning: #f59e0b;
+  --error: #ef4444;
+  
+  /* Neutral/Background */
+  --bg-main: rgb(233, 209, 244);
+  --bg-card: #ffffff;
+  --bg-muted: rgba(255, 255, 255, 0.6);
+  --bg: #ffffff;
+  --white: #ffffff;
+  --black: #000000;
+  --gray-100: #f7fafc;
+  --gray-200: #edf2f7;
+  
+  /* Text Colors */
+  --text-primary: #2d3748;
+  --text-secondary: #4a5568;
+  --text-muted: #718096;
+  
+  /* Borders */
+  --border: rgba(218, 143, 227, 0.3);
+  --border-light: rgba(255,255,255,0.5);
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.05);
+  --shadow-md: 0 4px 15px rgba(218, 143, 227, 0.2);
+  --shadow-lg: 0 10px 25px rgba(218, 143, 227, 0.25);
+  --shadow-xl: 0 20px 30px rgba(0,0,0,0.15);
+  
+  /* Radius & Transitions */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-xl: 32px;
+  --radius-full: 9999px;
+  --transition: 0.3s cubic-bezier(0.25, 1, 0.5, 1);
+  --transition-slow: 0.5s ease;
+  
+  /* Layout */
+  --navbar-height: 70px;
+  
+  /* Typography */
+  --font-ui: 'Outfit', sans-serif;
+  --font-display: 'Outfit', sans-serif;
+}
+
+body {
+  font-family: var(--font-ui);
+  color: var(--text-primary);
+  background-color: var(--bg-main);
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased;
+}
+
+main {
+  padding-top: var(--navbar-height);
+  min-height: calc(100vh - var(--navbar-height));
+}
+
+/* Global focus states */
+*:focus-visible {
+  outline: 2px solid var(--primary);
+  outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Custom Scrollbar for a premium feel */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-light);
+  border-radius: 10px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--primary);
+}

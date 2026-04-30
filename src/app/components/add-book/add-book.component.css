@@ -1,0 +1,131 @@
+.page-container{
+  text-align: center;
+  padding: 60px 40px;
+  min-height: calc(100vh - var(--navbar-height));
+  font-family: var(--font-ui);
+  /* background handled globally */
+}
+
+.page-container h2 {
+  font-size: 2.2rem;
+  color: var(--primary-dark);
+  font-weight: 800;
+  margin-bottom: 20px;
+}
+
+.choice-container{
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  margin-top: 40px;
+  flex-wrap: wrap;
+}
+
+.choice-card{
+  width: 280px;
+  padding: 40px 30px;
+  background: var(--bg-card);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: all var(--transition);
+  border: 1px solid var(--border-light);
+  position: relative;
+  overflow: hidden;
+}
+
+.choice-card:hover{
+  transform: translateY(-8px);
+  box-shadow: var(--shadow-xl);
+  border-color: var(--primary-light);
+}
+
+.choice-card h3 {
+  font-size: 1.5rem;
+  margin-bottom: 10px;
+}
+
+.sell-card{
+  border-top: 6px solid var(--primary);
+}
+
+.donate-card{
+  border-top: 6px solid var(--accent);
+}
+
+.form-section{
+  margin-top: 60px;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 40px;
+  width: 100%;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.form-section h3 {
+  font-size: 1.8rem;
+  color: var(--primary-dark);
+  margin-bottom: 25px;
+}
+
+.form-section input,
+.form-section select{
+  width: 100%;
+  padding: 14px 16px;
+  margin: 10px 0;
+  border-radius: var(--radius-md);
+  border: 2px solid var(--border);
+  background: var(--bg-card);
+  font-size: 1rem;
+  font-family: var(--font-ui);
+  transition: all var(--transition);
+}
+
+.form-section input:focus,
+.form-section select:focus {
+  border-color: var(--primary);
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(218, 143, 227, 0.2);
+}
+
+.price-box{
+  margin: 20px 0;
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--primary-dark);
+  background: rgba(218, 143, 227, 0.1);
+  padding: 15px;
+  border-radius: var(--radius-sm);
+  border-left: 4px solid var(--primary);
+}
+
+button{
+  padding: 14px 30px;
+  background: linear-gradient(135deg, var(--primary), var(--primary-dark));
+  color: white;
+  border: none;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  font-size: 1.1rem;
+  font-weight: 700;
+  transition: all var(--transition);
+  margin-top: 15px;
+  box-shadow: 0 4px 15px rgba(218, 143, 227, 0.4);
+  width: 100%;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(218, 143, 227, 0.6);
+}

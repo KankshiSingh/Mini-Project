@@ -1,0 +1,656 @@
+﻿mvn.cmd : WARNING: A restricted method in java.lang.System has been called
+At line:1 char:50
++ ... va\jdk-24"; & ".\maven\apache-maven-3.9.6\bin\mvn.cmd" compile > comp ...
++                 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+    + CategoryInfo          : NotSpecified: (WARNING: A rest...has been called:String) [], RemoteException
+    + FullyQualifiedErrorId : NativeCommandError
+ 
+WARNING: java.lang.System::load has been called by org.fusesource.jansi.internal.JansiLoader in an unnamed module 
+(file:/D:/book-revive-frontend/backend/maven/apache-maven-3.9.6/lib/jansi-2.4.0.jar)
+WARNING: Use --enable-native-access=ALL-UNNAMED to avoid a warning for callers in this module
+WARNING: Restricted methods will be blocked in a future release unless native access is enabled
+
+WARNING: A terminally deprecated method in sun.misc.Unsafe has been called
+WARNING: sun.misc.Unsafe::objectFieldOffset has been called by 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper 
+(file:/D:/book-revive-frontend/backend/maven/apache-maven-3.9.6/lib/guava-32.0.1-jre.jar)
+WARNING: Please consider reporting this to the maintainers of class 
+com.google.common.util.concurrent.AbstractFuture$UnsafeAtomicHelper
+WARNING: sun.misc.Unsafe::objectFieldOffset will be removed in a future release
+[INFO] Scanning for projects...
+[INFO] 
+[INFO] -----------------< com.bookrevive:book-revive-backend >-----------------
+[INFO] Building book-revive-backend 1.0.0
+[INFO]   from pom.xml
+[INFO] --------------------------------[ jar ]---------------------------------
+[INFO] 
+[INFO] --- resources:3.3.1:resources (default-resources) @ book-revive-backend ---
+[INFO] Copying 1 resource from src\main\resources to target\classes
+[INFO] Copying 0 resource from src\main\resources to target\classes
+[INFO] 
+[INFO] --- compiler:3.13.0:compile (default-compile) @ book-revive-backend ---
+[INFO] Recompiling the module because of changed source code.
+[INFO] Compiling 25 source files with javac [debug parameters release 21] to target\classes
+[INFO] -------------------------------------------------------------
+[ERROR] COMPILATION ERROR : 
+[INFO] -------------------------------------------------------------
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[380,34] cannot find symbol
+  symbol:   method builder()
+  location: class com.bookrevive.model.Review
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[381,33] cannot find symbol
+  symbol:   method getId()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[393,17] cannot find symbol
+  symbol:   method setAverageRating(double)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[394,17] cannot find symbol
+  symbol:   method setReviewCount(int)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[412,17] cannot find symbol
+  symbol:   method setTitle(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[413,17] cannot find symbol
+  symbol:   method setAuthor(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[414,17] cannot find symbol
+  symbol:   method setCategory(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[415,17] cannot find symbol
+  symbol:   method setPrice(double)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[416,17] cannot find symbol
+  symbol:   method setType(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[417,17] cannot find symbol
+  symbol:   method setCondition(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[418,17] cannot find symbol
+  symbol:   method setDescription(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[419,17] cannot find symbol
+  symbol:   method setImageUrl(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[420,17] cannot find symbol
+  symbol:   method setAvailable(boolean)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[421,17] cannot find symbol
+  symbol:   method setListedAt(java.time.LocalDateTime)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[422,17] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[425,17] cannot find symbol
+  symbol:   method setAverageRating(double)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[426,17] cannot find symbol
+  symbol:   method setReviewCount(int)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[427,17] cannot find symbol
+  symbol:   method setCoverColor(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[428,17] cannot find symbol
+  symbol:   method setEmoji(java.lang.String)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[24,13] cannot find symbol
+  symbol:   method setAvailable(boolean)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[25,13] cannot find symbol
+  symbol:   method setListedAt(java.time.LocalDateTime)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[26,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[29,17] cannot find symbol
+  symbol:   method getUserId()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[30,41] cannot find symbol
+  symbol:   method getUserId()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[57,24] cannot find symbol
+  symbol:   method getTitle()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[57,72] cannot find symbol
+  symbol:   method getTitle()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[58,24] cannot find symbol
+  symbol:   method getAuthor()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[58,73] cannot find symbol
+  symbol:   method getAuthor()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[59,24] cannot find symbol
+  symbol:   method getPrice()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[59,72] cannot find symbol
+  symbol:   method getPrice()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[60,24] cannot find symbol
+  symbol:   method getCategory()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[60,75] cannot find symbol
+  symbol:   method getCategory()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[61,24] cannot find symbol
+  symbol:   method getCondition()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[61,76] cannot find symbol
+  symbol:   method getCondition()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[62,24] cannot find symbol
+  symbol:   method getDescription()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[62,78] cannot find symbol
+  symbol:   method getDescription()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[63,24] cannot find symbol
+  symbol:   method getType()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[63,71] cannot find symbol
+  symbol:   method getType()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[64,24] cannot find symbol
+  symbol:   method getAvailable()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[64,76] cannot find symbol
+  symbol:   method getAvailable()
+  location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[65,17] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[110,78] cannot find symbol
+  symbol:   method getAvailable()
+  location: variable b of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[111,79] cannot find symbol
+  symbol:   method getAvailable()
+  location: variable b of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[124,17] cannot find symbol
+  symbol:   method setAvailable(boolean)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[125,17] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[28,17] cannot find symbol
+  symbol:   method setUserId(java.lang.String)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[29,17] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[47,38] cannot find symbol
+  symbol:   method getAvailable()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[56,67] cannot find symbol
+  symbol:   method getType()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[57,23] cannot find symbol
+  symbol:   method getDonateItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[58,23] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[62,33] cannot find symbol
+  symbol:   method getBookId()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[66,54] cannot find symbol
+  symbol:   method getQuantity()
+  location: class com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[69,17] cannot find symbol
+  symbol:   method setBookId(java.lang.String)
+  location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[70,31] cannot find symbol
+  symbol:   method getTitle()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[71,32] cannot find symbol
+  symbol:   method getAuthor()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[72,31] cannot find symbol
+  symbol:   method getPrice()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[73,30] cannot find symbol
+  symbol:   method getType()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[74,34] cannot find symbol
+  symbol:   method getCategory()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[75,35] cannot find symbol
+  symbol:   method getCondition()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[76,17] cannot find symbol
+  symbol:   method setQuantity(int)
+  location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[77,33] cannot find symbol
+  symbol:   method getUserId()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[78,35] cannot find symbol
+  symbol:   method getOwnerName()
+  location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[83,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[98,41] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[99,41] cannot find symbol
+  symbol:   method getDonateItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[108,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[129,34] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[130,21] cannot find symbol
+  symbol:   method getBookId()
+  location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[131,21] cannot find symbol
+  symbol:   method setQuantity(int)
+  location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[137,38] cannot find symbol
+  symbol:   method getDonateItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[138,25] cannot find symbol
+  symbol:   method getBookId()
+  location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[139,25] cannot find symbol
+  symbol:   method setQuantity(int)
+  location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[153,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[166,13] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[167,13] cannot find symbol
+  symbol:   method getDonateItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[169,13] cannot find symbol
+  symbol:   method setUpdatedAt(java.time.LocalDateTime)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[181,28] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[184,25] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[184,58] invalid method reference
+  cannot find symbol
+    symbol:   method getQuantity()
+    location: class com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[185,25] cannot find symbol
+  symbol:   method getDonateItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[185,61] invalid method reference
+  cannot find symbol
+    symbol:   method getQuantity()
+    location: class com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[187,13] cannot find symbol
+  symbol:   method setBuyTotal(double)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[188,13] cannot find symbol
+  symbol:   method setItemCount(int)
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[41,34] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[41,66] cannot find symbol
+  symbol:   method getDonateItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[48,14] cannot find symbol
+  symbol:   method setOrderId(java.lang.String)
+  location: variable order of type com.bookrevive.model.Order
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[49,14] cannot find symbol
+  symbol:   method setUserId(java.lang.String)
+  location: variable order of type com.bookrevive.model.Order
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[53,35] cannot find symbol
+  symbol:   method getName()
+  location: variable user of type com.bookrevive.model.User
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[54,36] cannot find symbol
+  symbol:   method getEmail()
+  location: variable user of type com.bookrevive.model.User
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[59,32] cannot find symbol
+  symbol:   method getBuyItems()
+  location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[61,28] cannot find symbol
+  symbol:   method getBookId()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[62,27] cannot find symbol
+  symbol:   method getTitle()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[63,28] cannot find symbol
+  symbol:   method getAuthor()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[64,27] cannot find symbol
+  symbol:   method getPrice()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[65,26] cannot find symbol
+  symbol:   method getType()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[66,30] cannot find symbol
+  symbol:   method getCategory()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[67,31] cannot find symbol
+  symbol:   method getCondition()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[68,30] cannot find symbol
+  symbol:   method getQuantity()
+  location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[69,30] cannot find symbol
+  symbol:   method getPrice()
+  location: variable ci of type com.bookrevive.model.CartItem
+[INFO] 100 errors 
+[INFO] -------------------------------------------------------------
+[INFO] ------------------------------------------------------------------------
+[INFO] BUILD FAILURE
+[INFO] ------------------------------------------------------------------------
+[INFO] Total time:  7.022 s
+[INFO] Finished at: 2026-04-24T08:24:14+05:30
+[INFO] ------------------------------------------------------------------------
+[ERROR] Failed to execute goal org.apache.maven.plugins:maven-compiler-plugin:3.13.0:compile (default-compile) on project book-revive-backend: Compilation failure: Compilation failure: 
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[380,34] cannot find symbol
+[ERROR]   symbol:   method builder()
+[ERROR]   location: class com.bookrevive.model.Review
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[381,33] cannot find symbol
+[ERROR]   symbol:   method getId()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[393,17] cannot find symbol
+[ERROR]   symbol:   method setAverageRating(double)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[394,17] cannot find symbol
+[ERROR]   symbol:   method setReviewCount(int)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[412,17] cannot find symbol
+[ERROR]   symbol:   method setTitle(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[413,17] cannot find symbol
+[ERROR]   symbol:   method setAuthor(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[414,17] cannot find symbol
+[ERROR]   symbol:   method setCategory(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[415,17] cannot find symbol
+[ERROR]   symbol:   method setPrice(double)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[416,17] cannot find symbol
+[ERROR]   symbol:   method setType(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[417,17] cannot find symbol
+[ERROR]   symbol:   method setCondition(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[418,17] cannot find symbol
+[ERROR]   symbol:   method setDescription(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[419,17] cannot find symbol
+[ERROR]   symbol:   method setImageUrl(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[420,17] cannot find symbol
+[ERROR]   symbol:   method setAvailable(boolean)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[421,17] cannot find symbol
+[ERROR]   symbol:   method setListedAt(java.time.LocalDateTime)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[422,17] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[425,17] cannot find symbol
+[ERROR]   symbol:   method setAverageRating(double)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[426,17] cannot find symbol
+[ERROR]   symbol:   method setReviewCount(int)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[427,17] cannot find symbol
+[ERROR]   symbol:   method setCoverColor(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/config/DataSeeder.java:[428,17] cannot find symbol
+[ERROR]   symbol:   method setEmoji(java.lang.String)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[24,13] cannot find symbol
+[ERROR]   symbol:   method setAvailable(boolean)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[25,13] cannot find symbol
+[ERROR]   symbol:   method setListedAt(java.time.LocalDateTime)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[26,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[29,17] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[30,41] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[57,24] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[57,72] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[58,24] cannot find symbol
+[ERROR]   symbol:   method getAuthor()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[58,73] cannot find symbol
+[ERROR]   symbol:   method getAuthor()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[59,24] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[59,72] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[60,24] cannot find symbol
+[ERROR]   symbol:   method getCategory()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[60,75] cannot find symbol
+[ERROR]   symbol:   method getCategory()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[61,24] cannot find symbol
+[ERROR]   symbol:   method getCondition()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[61,76] cannot find symbol
+[ERROR]   symbol:   method getCondition()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[62,24] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[62,78] cannot find symbol
+[ERROR]   symbol:   method getDescription()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[63,24] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[63,71] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[64,24] cannot find symbol
+[ERROR]   symbol:   method getAvailable()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[64,76] cannot find symbol
+[ERROR]   symbol:   method getAvailable()
+[ERROR]   location: variable updates of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[65,17] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[110,78] cannot find symbol
+[ERROR]   symbol:   method getAvailable()
+[ERROR]   location: variable b of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[111,79] cannot find symbol
+[ERROR]   symbol:   method getAvailable()
+[ERROR]   location: variable b of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[124,17] cannot find symbol
+[ERROR]   symbol:   method setAvailable(boolean)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/BookService.java:[125,17] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[28,17] cannot find symbol
+[ERROR]   symbol:   method setUserId(java.lang.String)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[29,17] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[47,38] cannot find symbol
+[ERROR]   symbol:   method getAvailable()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[56,67] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[57,23] cannot find symbol
+[ERROR]   symbol:   method getDonateItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[58,23] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[62,33] cannot find symbol
+[ERROR]   symbol:   method getBookId()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[66,54] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: class com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[69,17] cannot find symbol
+[ERROR]   symbol:   method setBookId(java.lang.String)
+[ERROR]   location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[70,31] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[71,32] cannot find symbol
+[ERROR]   symbol:   method getAuthor()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[72,31] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[73,30] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[74,34] cannot find symbol
+[ERROR]   symbol:   method getCategory()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[75,35] cannot find symbol
+[ERROR]   symbol:   method getCondition()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[76,17] cannot find symbol
+[ERROR]   symbol:   method setQuantity(int)
+[ERROR]   location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[77,33] cannot find symbol
+[ERROR]   symbol:   method getUserId()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[78,35] cannot find symbol
+[ERROR]   symbol:   method getOwnerName()
+[ERROR]   location: variable book of type com.bookrevive.model.Book
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[83,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[98,41] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[99,41] cannot find symbol
+[ERROR]   symbol:   method getDonateItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[108,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[129,34] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[130,21] cannot find symbol
+[ERROR]   symbol:   method getBookId()
+[ERROR]   location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[131,21] cannot find symbol
+[ERROR]   symbol:   method setQuantity(int)
+[ERROR]   location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[137,38] cannot find symbol
+[ERROR]   symbol:   method getDonateItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[138,25] cannot find symbol
+[ERROR]   symbol:   method getBookId()
+[ERROR]   location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[139,25] cannot find symbol
+[ERROR]   symbol:   method setQuantity(int)
+[ERROR]   location: variable item of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[153,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[166,13] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[167,13] cannot find symbol
+[ERROR]   symbol:   method getDonateItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[169,13] cannot find symbol
+[ERROR]   symbol:   method setUpdatedAt(java.time.LocalDateTime)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[181,28] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[184,25] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[184,58] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method getQuantity()
+[ERROR]     location: class com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[185,25] cannot find symbol
+[ERROR]   symbol:   method getDonateItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[185,61] invalid method reference
+[ERROR]   cannot find symbol
+[ERROR]     symbol:   method getQuantity()
+[ERROR]     location: class com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[187,13] cannot find symbol
+[ERROR]   symbol:   method setBuyTotal(double)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/CartService.java:[188,13] cannot find symbol
+[ERROR]   symbol:   method setItemCount(int)
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[41,34] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[41,66] cannot find symbol
+[ERROR]   symbol:   method getDonateItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[48,14] cannot find symbol
+[ERROR]   symbol:   method setOrderId(java.lang.String)
+[ERROR]   location: variable order of type com.bookrevive.model.Order
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[49,14] cannot find symbol
+[ERROR]   symbol:   method setUserId(java.lang.String)
+[ERROR]   location: variable order of type com.bookrevive.model.Order
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[53,35] cannot find symbol
+[ERROR]   symbol:   method getName()
+[ERROR]   location: variable user of type com.bookrevive.model.User
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[54,36] cannot find symbol
+[ERROR]   symbol:   method getEmail()
+[ERROR]   location: variable user of type com.bookrevive.model.User
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[59,32] cannot find symbol
+[ERROR]   symbol:   method getBuyItems()
+[ERROR]   location: variable cart of type com.bookrevive.model.Cart
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[61,28] cannot find symbol
+[ERROR]   symbol:   method getBookId()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[62,27] cannot find symbol
+[ERROR]   symbol:   method getTitle()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[63,28] cannot find symbol
+[ERROR]   symbol:   method getAuthor()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[64,27] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[65,26] cannot find symbol
+[ERROR]   symbol:   method getType()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[66,30] cannot find symbol
+[ERROR]   symbol:   method getCategory()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[67,31] cannot find symbol
+[ERROR]   symbol:   method getCondition()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[68,30] cannot find symbol
+[ERROR]   symbol:   method getQuantity()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] /D:/book-revive-frontend/backend/src/main/java/com/bookrevive/service/OrderService.java:[69,30] cannot find symbol
+[ERROR]   symbol:   method getPrice()
+[ERROR]   location: variable ci of type com.bookrevive.model.CartItem
+[ERROR] -> [Help 1]
+[ERROR] 
+[ERROR] To see the full stack trace of the errors, re-run Maven with the -e switch.
+[ERROR] Re-run Maven using the -X switch to enable full debug logging.
+[ERROR] 
+[ERROR] For more information about the errors and possible solutions, please read the following articles:
+[ERROR] [Help 1] http://cwiki.apache.org/confluence/display/MAVEN/MojoFailureException

@@ -1,0 +1,435 @@
+<div class="explore-page page-wrapper">
+
+  <!-- ══════════════════════════════════════════════════════
+       HERO STRIP
+  ════════════════════════════════════════════════════════ -->
+  <section class="explore-hero">
+    <div class="hero-inner container">
+      <div class="hero-text">
+        <h1 class="hero-heading">Explore <em>100+ Books</em></h1>
+        <p class="hero-sub">Second-hand gems across 10 genres · Up to 80% off retail</p>
+      </div>
+
+      <!-- Global search bar -->
+      <div class="hero-search">
+        <span class="hs-icon"></span>
+        <input type="text" class="hs-input" placeholder="Search by title, author, or tag…" [value]="searchQuery()"
+          (input)="searchQuery.set($any($event.target).value); currentPage.set(1)" />
+        @if (searchQuery()) {
+        <button class="hs-clear" (click)="searchQuery.set('')">✕</button>
+        }
+      </div>
+    </div>
+  </section>
+
+  <div class="container page-layout">
+
+    <!-- ════════════════════════════════════════════════════
+         LEFT SIDEBAR — FILTERS
+    ═══════════════════════════════════════════════════════ -->
+    <aside class="filter-col" [class.open]="filtersOpen()">
+      <div class="filter-card card">
+
+        <div class="filter-top">
+          <h3 class="filter-title">Filters</h3>
+          <button class="clear-link" (click)="clearFilters()">Clear all</button>
+        </div>
+
+        <!-- Genre pills -->
+        <div class="filter-section">
+          <h4 class="filter-label">Genre</h4>
+          <div class="genre-list">
+            @for (g of genres; track g) {
+            <button class="genre-pill" [class.active]="selectedGenre() === g" (click)="setGenre(g)">
+              {{ g }}
+              @if (g !== 'All') {
+              <span class="genre-count">{{ getGenreCount(g) }}</span>
+              }
+            </button>
+            }
+          </div>
+        </div>
+
+        <div class="filter-rule"></div>
+
+        <!-- Condition -->
+        <div class="filter-section">
+          <h4 class="filter-label">Condition</h4>
+          <div class="cond-radios">
+            @for (c of conditions; track c) {
+            <label class="cond-label" [class.active]="selectedCond() === c">
+              <input type="radio" name="cond" [value]="c" [checked]="selectedCond() === c"
+                (change)="selectedCond.set(c); currentPage.set(1)" hidden />
+              <span class="cond-dot cond-{{ c.toLowerCase().replace(' ','-') }}"></span>
+              {{ c }}
+            </label>
+            }
+          </div>
+        </div>
+
+        <div class="filter-rule"></div>
+
+        <!-- Price range -->
+        <div class="filter-section">
+          <h4 class="filter-label">
+            Price Range
+            <span class="range-val">₹{{ minPrice() }} – ₹{{ maxPrice() }}</span>
+          </h4>
+          <div class="range-row">
+            <span class="range-end">₹0</span>
+            <input type="range" min="0" max="500" step="10" class="range-slider" [value]="maxPrice()"
+              (input)="maxPrice.set(+$any($event.target).value); currentPage.set(1)" />
+            <span class="range-end">₹500</span>
+          </div>
+        </div>
+
+        <div class="filter-rule"></div>
+
+        <!-- Rating filter -->
+        <div class="filter-section">
+          <h4 class="filter-label">Min Rating</h4>
+          <div class="rating-btns">
+            @for (r of [0, 4, 4.5, 4.8]; track r) {
+            <button class="rating-btn" [class.active]="minRating() === r"
+              (click)="minRating.set(r); currentPage.set(1)">
+              {{ r === 0 ? 'All' : '★ ' + r + '+' }}
+            </button>
+            }
+          </div>
+        </div>
+
+      </div>
+    </aside>
+
+    <!-- ════════════════════════════════════════════════════
+         MAIN CONTENT
+    ═══════════════════════════════════════════════════════ -->
+    <main class="main-col">
+
+      <!-- Toolbar -->
+      <div class="toolbar">
+        <div class="toolbar-left">
+          <button class="filter-toggle-btn" (click)="filtersOpen.set(!filtersOpen())">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <line x1="4" y1="6" x2="20" y2="6" />
+              <line x1="8" y1="12" x2="20" y2="12" />
+              <line x1="12" y1="18" x2="20" y2="18" />
+            </svg>
+            Filters
+          </button>
+          <span class="results-count">
+            <strong>{{ filtered().length }}</strong> books found
+            @if (selectedGenre() !== 'All') { · <span class="genre-tag">{{ selectedGenre() }}</span> }
+          </span>
+        </div>
+
+        <div class="toolbar-right">
+          <!-- Sort -->
+          <select class="sort-select" [value]="sortBy()"
+            (change)="sortBy.set($any($event.target).value); currentPage.set(1)">
+            @for (opt of sortOptions; track opt.value) {
+            <option [value]="opt.value">{{ opt.label }}</option>
+            }
+          </select>
+
+          <!-- View toggle -->
+          <div class="view-toggle">
+            <button class="vt-btn" [class.active]="viewMode()==='grid'" (click)="viewMode.set('grid')" title="Grid">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
+                <rect x="3" y="3" width="7" height="7" rx="1" />
+                <rect x="14" y="3" width="7" height="7" rx="1" />
+                <rect x="3" y="14" width="7" height="7" rx="1" />
+                <rect x="14" y="14" width="7" height="7" rx="1" />
+              </svg>
+            </button>
+            <button class="vt-btn" [class.active]="viewMode()==='list'" (click)="viewMode.set('list')" title="List">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <line x1="3" y1="6" x2="21" y2="6" />
+                <line x1="3" y1="12" x2="21" y2="12" />
+                <line x1="3" y1="18" x2="21" y2="18" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Cart button -->
+          <button class="cart-btn-toolbar" (click)="showCartPanel.set(true)">
+            
+            @if (cartCount() > 0) {
+            <span class="cart-badge-sm">{{ cartCount() }}</span>
+            }
+          </button>
+        </div>
+      </div>
+
+      <!-- Genre quick tabs -->
+      <div class="genre-tabs">
+        @for (g of genres; track g) {
+        <button class="gtab" [class.active]="selectedGenre()===g" (click)="setGenre(g)">{{ g }}</button>
+        }
+      </div>
+
+      <!-- ── EMPTY STATE ─────────────────────────────────── -->
+      @if (filtered().length === 0) {
+      <div class="empty-state">
+        <div class="empty-state-icon"></div>
+        <h3>No books match your filters</h3>
+        <p>Try adjusting your search, genre, or price range.</p>
+        <button class="btn btn-primary" (click)="clearFilters()">Clear All Filters</button>
+      </div>
+      }
+
+      <!-- ── BOOK GRID ───────────────────────────────────── -->
+      @if (filtered().length > 0) {
+      <div class="books-grid" [class.list-mode]="viewMode()==='list'">
+
+        @for (book of paged(); track book.id) {
+        <article class="book-card" [class.list-card]="viewMode()==='list'">
+
+          <!-- Cover -->
+          <div class="book-cover"
+            [style.background]="'linear-gradient(135deg,' + book.coverColor + ' 0%,' + book.coverColor + 'cc 100%)'">
+            <div class="cover-shine"></div>
+            
+            @if (book.imageUrl) {
+              <img [src]="book.imageUrl" class="cover-img" [alt]="book.title" (error)="book.imageUrl = ''">
+            } @else {
+              <span class="cover-emoji">{{ book.emoji }}</span>
+            }
+
+            <div class="cover-genre-tag" [style.background]="book.coverAccent" [style.color]="book.coverColor">
+              {{ book.genre }}
+            </div>
+            @if (book.bestseller) {
+            <div class="bestseller-ribbon"> Bestseller</div>
+            }
+
+            <!-- Hover overlay -->
+            <div class="cover-overlay">
+              <button class="overlay-btn" (click)="openQuickView(book)"> Quick View</button>
+              <button class="overlay-btn wishlist-ov" [class.wished]="book.wishlist" (click)="toggleWishlist(book)">
+                {{ book.wishlist ? '️' : '' }} Wishlist
+              </button>
+            </div>
+
+            <!-- Discount badge -->
+            <div class="discount-badge">{{ discount(book) }}% off</div>
+          </div>
+
+          <!-- Info -->
+          <div class="book-body">
+            <div class="book-meta-top">
+              <span class="book-condition {{ condClass(book.condition) }}">{{ book.condition }}</span>
+              <span class="book-lang">{{ book.language }}</span>
+            </div>
+
+            <h3 class="book-title" [title]="book.title">{{ book.title }}</h3>
+            <p class="book-author">by {{ book.author }}</p>
+
+            <!-- Stars -->
+            <div class="stars-row">
+              @for (f of stars(book.rating); track $index) {
+              <span class="star" [class.filled]="f">★</span>
+              }
+              @if (halfStar(book.rating)) { <span class="star half-filled">★</span> }
+              <span class="rating-val">{{ book.rating }}</span>
+              <span class="reviews-count">({{ formatNum(book.reviews) }})</span>
+            </div>
+
+            <!-- Description (list mode only) -->
+            @if (viewMode() === 'list') {
+            <p class="book-desc">{{ book.description }}</p>
+            <div class="book-tags">
+              @for (tag of book.tags; track tag) {
+              <span class="tag-chip">#{{ tag }}</span>
+              }
+            </div>
+            }
+
+            <!-- Price -->
+            <div class="price-row">
+              <span class="price-now">₹{{ book.price }}</span>
+              <span class="price-was">₹{{ book.originalPrice }}</span>
+            </div>
+          </div>
+
+          <!-- Actions -->
+          <div class="book-footer">
+            @if (!inCart(book.id)) {
+            <button class="btn-add-cart" (click)="addToCart(book)">
+              <span></span> Add to Cart
+            </button>
+            } @else {
+            <button class="btn-in-cart" (click)="showCartPanel.set(true)">
+              <span></span> In Cart
+            </button>
+            }
+            <button class="btn-wishlist" [class.wished]="book.wishlist" (click)="toggleWishlist(book)">
+              {{ book.wishlist ? '️' : '' }}
+            </button>
+          </div>
+        </article>
+        }
+      </div>
+
+      <!-- ── PAGINATION ──────────────────────────────────── -->
+      @if (totalPages() > 1) {
+      <div class="pagination">
+        <button class="pg-btn" [disabled]="currentPage()===1" (click)="goPage(currentPage()-1)">← Prev</button>
+        @for (p of pages(); track p) {
+        @if (p === '...') {
+        <span class="pg-ellipsis">…</span>
+        } @else {
+        <button class="pg-btn pg-num" [class.active]="p===currentPage()" (click)="goPage(p)">{{ p }}</button>
+        }
+        }
+        <button class="pg-btn" [disabled]="currentPage()===totalPages()" (click)="goPage(currentPage()+1)">Next
+          →</button>
+      </div>
+      <p class="pg-info">
+        Showing {{ (currentPage()-1)*20+1 }}–{{ Math.min(currentPage()*20, filtered().length) }}
+        of {{ filtered().length }} books
+      </p>
+      }
+      }
+    </main>
+  </div>
+</div>
+
+<!-- ══════════════════════════════════════════════════════════
+     CART SIDE PANEL
+════════════════════════════════════════════════════════════ -->
+@if (showCartPanel()) {
+<div class="cart-overlay" (click)="showCartPanel.set(false)"></div>
+<aside class="cart-panel">
+  <div class="cp-header">
+    <h3 class="cp-title"> Your Cart <span class="cp-count">{{ cartCount() }}</span></h3>
+    <button class="cp-close" (click)="showCartPanel.set(false)">✕</button>
+  </div>
+
+  <div class="cp-items">
+    @if (cart().length === 0) {
+    <div class="cp-empty">
+      <span class="cp-empty-icon">️</span>
+      <p>Your cart is empty.<br>Start adding books!</p>
+      <button class="btn btn-primary btn-sm" (click)="showCartPanel.set(false)">Browse Books</button>
+    </div>
+    } @else {
+    @for (item of cart(); track item.book.id) {
+    <div class="cp-item">
+      <div class="cp-item-cover"
+        [style.background]="'linear-gradient(135deg,' + item.book.coverColor + ', ' + item.book.coverColor + 'aa)'">
+        @if (item.book.imageUrl) {
+          <img [src]="item.book.imageUrl" class="cp-item-img">
+        } @else {
+          <span>{{ item.book.emoji }}</span>
+        }
+      </div>
+      <div class="cp-item-info">
+        <div class="cp-item-title">{{ item.book.title }}</div>
+        <div class="cp-item-author">{{ item.book.author }}</div>
+        <div class="cp-item-price">₹{{ item.book.price * item.qty }}</div>
+      </div>
+      <div class="cp-item-controls">
+        <div class="qty-stepper">
+          <button class="qty-btn" (click)="changeQty(item.book.id, -1)" [disabled]="item.qty<=1">−</button>
+          <span class="qty-val">{{ item.qty }}</span>
+          <button class="qty-btn" (click)="changeQty(item.book.id, 1)">+</button>
+        </div>
+        <button class="cp-remove" (click)="removeFromCart(item.book.id)"></button>
+      </div>
+    </div>
+    }
+    }
+  </div>
+
+  @if (cart().length > 0) {
+  <div class="cp-footer">
+    <div class="cp-total-row">
+      <span>Total</span>
+      <span class="cp-total">₹{{ cartTotal() }}</span>
+    </div>
+    <a routerLink="/cart" class="btn btn-accent btn-block" (click)="showCartPanel.set(false)">
+      Proceed to Checkout →
+    </a>
+    <button class="btn btn-ghost btn-block" (click)="showCartPanel.set(false)">Continue Shopping</button>
+  </div>
+  }
+</aside>
+}
+
+<!-- ══════════════════════════════════════════════════════════
+     QUICK VIEW MODAL
+════════════════════════════════════════════════════════════ -->
+@if (quickViewBook()) {
+<div class="modal-overlay" (click)="closeQuickView()">
+  <div class="quick-modal" (click)="$event.stopPropagation()">
+    <button class="modal-close" (click)="closeQuickView()">✕</button>
+
+    <div class="qm-layout">
+      <!-- Cover -->
+      <div class="qm-cover"
+        [style.background]="'linear-gradient(135deg,' + quickViewBook()!.coverColor + ' 0%,' + quickViewBook()!.coverColor + 'bb 100%)'">
+        @if (quickViewBook()!.imageUrl) {
+          <img [src]="quickViewBook()!.imageUrl" class="qm-img" (error)="quickViewBook()!.imageUrl = ''">
+        } @else {
+          <span class="qm-emoji">{{ quickViewBook()!.emoji }}</span>
+        }
+        @if (quickViewBook()!.bestseller) {
+        <div class="qm-bestseller"> Bestseller</div>
+        }
+      </div>
+
+      <!-- Details -->
+      <div class="qm-info">
+        <div class="qm-genre" [style.color]="quickViewBook()!.coverColor">{{ quickViewBook()!.genre }}</div>
+        <h2 class="qm-title">{{ quickViewBook()!.title }}</h2>
+        <p class="qm-author">by <strong>{{ quickViewBook()!.author }}</strong></p>
+
+        <div class="stars-row" style="margin:8px 0">
+          @for (f of stars(quickViewBook()!.rating); track $index) {
+          <span class="star" [class.filled]="f">★</span>
+          }
+          <span class="rating-val">{{ quickViewBook()!.rating }}</span>
+          <span class="reviews-count">({{ formatNum(quickViewBook()!.reviews) }} reviews)</span>
+        </div>
+
+        <p class="qm-desc">{{ quickViewBook()!.description }}</p>
+
+        <div class="qm-specs">
+          <div class="spec-item"><span></span> {{ quickViewBook()!.pages }} pages</div>
+          <div class="spec-item"><span></span> Published {{ quickViewBook()!.year }}</div>
+          <div class="spec-item"><span></span> {{ quickViewBook()!.language }}</div>
+          <div class="spec-item">
+            <span></span>
+            <span class="{{ condClass(quickViewBook()!.condition) }} badge">{{ quickViewBook()!.condition }}</span>
+          </div>
+        </div>
+
+        <div class="qm-tags">
+          @for (t of quickViewBook()!.tags; track t) {
+          <span class="tag-chip">＃{{ t }}</span>
+          }
+        </div>
+
+        <div class="qm-price-row">
+          <div>
+            <span class="qm-price">₹{{ quickViewBook()!.price }}</span>
+            <span class="qm-orig">₹{{ quickViewBook()!.originalPrice }}</span>
+            <span class="qm-disc">{{ discount(quickViewBook()!) }}% off</span>
+          </div>
+        </div>
+
+        <div class="qm-actions">
+          <button class="btn btn-primary btn-lg" style="flex:1" (click)="addToCart(quickViewBook()!); closeQuickView()">
+             Add to Cart
+          </button>
+          <button class="btn btn-ghost" (click)="toggleWishlist(quickViewBook()!)"
+            [class.wishlisted-btn]="quickViewBook()!.wishlist">
+            {{ quickViewBook()!.wishlist ? '️' : '' }}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+}

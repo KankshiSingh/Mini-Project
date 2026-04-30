@@ -1,0 +1,155 @@
+<!-- ── Hero Section ────────────────────────────────────────────────── -->
+<div class="reviews-hero">
+  <div class="rh-overlay"></div>
+  <div class="container rh-inner">
+    <div class="rh-text">
+      <div class="rh-eyebrow">
+        <span>⭐</span> Community Hub
+      </div>
+      <h1 class="rh-title">Explore <em>Community</em><br>Book Reviews</h1>
+      <p class="rh-sub">Discover your next great read through the eyes of our passionate community of book lovers.</p>
+    </div>
+
+    <!-- Live Platform Stats -->
+    <div class="rh-stats">
+      <div class="rhs-item">
+        <span class="rhs-val">4.8</span>
+        <div class="rhs-stars">
+          <span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span><span class="star filled">★</span>
+        </div>
+        <span class="rhs-lbl">Avg Rating</span>
+      </div>
+      <div class="rhs-divider"></div>
+      <div class="rhs-item">
+        <span class="rhs-val">{{ books().length }}</span>
+        <span class="rhs-lbl">Books Listed</span>
+      </div>
+      <div class="rhs-divider"></div>
+      <div class="rhs-dist">
+        <div class="dist-row">
+          <span class="dist-star">5★</span>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill" style="width: 85%"></div></div>
+          <span class="dist-pct">85%</span>
+        </div>
+        <div class="dist-row">
+          <span class="dist-star">4★</span>
+          <div class="dist-bar-wrap"><div class="dist-bar-fill" style="width: 12%"></div></div>
+          <span class="dist-pct">12%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ── Main Content ─────────────────────────────────────────────── -->
+<div class="container py-5">
+  
+  <!-- Toolbar: Search & Filter -->
+  <div class="filter-toolbar">
+    <!-- Row 1: search + sort -->
+    <div class="filter-top-row">
+      <div class="ft-search">
+        <span class="ft-search-icon">🔍</span>
+        <input type="text" class="ft-input" placeholder="Search by title or author..."
+          [value]="searchQuery()" (input)="searchQuery.set($any($event.target).value); currentPage.set(1)">
+      </div>
+      <select class="sort-sel" [value]="sortBy()" (change)="sortBy.set($any($event.target).value); currentPage.set(1)">
+        @for (opt of sortOptions; track opt.value) {
+          <option [value]="opt.value">{{ opt.label }}</option>
+        }
+      </select>
+    </div>
+    <!-- Row 2: genre pills -->
+    <div class="ft-genres">
+      <button class="genre-pill" [class.active]="selectedGenre() === 'All'" (click)="selectedGenre.set('All'); currentPage.set(1)">All Genres</button>
+      @for (g of genres().slice(1); track g) {
+        <button class="genre-pill" [class.active]="selectedGenre() === g" (click)="selectedGenre.set(g); currentPage.set(1)">{{ g }}</button>
+      }
+    </div>
+  </div>
+
+  <!-- ── Results Grid ─────────────────────────────────────────────── -->
+  @if (loading()) {
+    <div class="loading-grid">
+      @for (i of [1,2,3,4,5,6]; track i) {
+        <div class="skeleton-card">
+          <div class="sk-cover"></div>
+          <div class="sk-body">
+            <div class="sk-line wide"></div>
+            <div class="sk-line medium"></div>
+            <div class="sk-line short"></div>
+          </div>
+        </div>
+      }
+    </div>
+  } @else {
+    <div class="books-grid">
+      @for (book of pagedBooks(); track book.id) {
+        <div class="book-review-card" [routerLink]="['/book-reviews', book.id]">
+          <div class="brc-cover" [style.background]="book.coverColor || '#eee'">
+            <div class="brc-shine"></div>
+            @if (book.imageUrl) {
+              <img [src]="book.imageUrl" [alt]="book.title" class="brc-img">
+            } @else {
+              <span class="brc-emoji">{{ book.emoji }}</span>
+            }
+            <span class="brc-genre-tag" [style.background]="'rgba(255,255,255,0.9)'" [style.color]="'#222'">
+              {{ book.category }}
+            </span>
+          </div>
+
+          <div class="brc-body">
+            <h3 class="brc-title">{{ book.title }}</h3>
+            <p class="brc-author">by {{ book.author }}</p>
+            
+            <div class="brc-rating">
+              <div class="stars">
+                <span class="star" [class.filled]="(book.averageRating || 0) >= 1">★</span>
+                <span class="star" [class.filled]="(book.averageRating || 0) >= 2">★</span>
+                <span class="star" [class.filled]="(book.averageRating || 0) >= 3">★</span>
+                <span class="star" [class.filled]="(book.averageRating || 0) >= 4">★</span>
+                <span class="star" [class.filled]="(book.averageRating || 0) >= 5">★</span>
+              </div>
+              <span class="brc-avg">{{ (book.averageRating || 0) | number:'1.1-1' }}</span>
+              <span class="brc-review-count">({{ book.reviewCount || 0 }})</span>
+            </div>
+          </div>
+
+          <div class="brc-footer">
+            <span class="brc-price">₹{{ book.price }}</span>
+            <button class="brc-see-btn">Read Reviews →</button>
+          </div>
+        </div>
+      } @empty {
+        <div class="col-12 text-center py-5">
+          <div class="empty-icon">📭</div>
+          <h3 class="text-muted mt-3">No books matched your criteria</h3>
+          <p class="text-secondary">Try adjusting your filters or search term.</p>
+        </div>
+      }
+    </div>
+
+    <!-- ── PAGINATION ──────────────────────────────────── -->
+    @if (totalPages() > 1) {
+      <div class="pagination d-flex justify-content-center align-items-center gap-2 mt-5">
+        <button class="btn btn-outline-primary rounded-pill px-4" [disabled]="currentPage() === 1" (click)="goPage(currentPage() - 1)">← Prev</button>
+        
+        <div class="d-flex gap-2 mx-3">
+          @for (p of pages(); track p) {
+            <button class="btn rounded-circle" 
+              [class.btn-primary]="p === currentPage()" 
+              [class.btn-light]="p !== currentPage()"
+              style="width: 40px; height: 40px; padding: 0;"
+              (click)="goPage(p)">{{ p }}</button>
+          }
+        </div>
+
+        <button class="btn btn-outline-primary rounded-pill px-4" [disabled]="currentPage() === totalPages()" (click)="goPage(currentPage() + 1)">Next →</button>
+      </div>
+      <p class="text-center text-muted mt-3 small">
+        Showing {{ (currentPage() - 1) * itemsPerPage + 1 }}–{{ Math.min(currentPage() * itemsPerPage, filteredBooks().length) }}
+        of {{ filteredBooks().length }} books
+      </p>
+    }
+  }
+</div>

@@ -1,0 +1,46 @@
+<div class="register-container">
+
+  <div class="register-card">
+
+    <h1 class="title">Create Account</h1>
+
+    <p class="subtitle">
+      Join Book Revive. <br>
+      You can sell, donate and buy second hand books here!!
+    </p>
+
+    <div class="input-group">
+      <input [(ngModel)]="user.name" placeholder="Full Name" class="input" [class.error-input]="errors.name()" required>
+      @if (errors.name()) { <p class="error-text">{{ errors.name() }}</p> }
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="user.age" type="number" placeholder="Age" class="input" [class.error-input]="errors.age()" required>
+      @if (errors.age()) { <p class="error-text">{{ errors.age() }}</p> }
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="user.phone" type="tel" placeholder="Phone no." class="input" [class.error-input]="errors.phone()" required>
+      @if (errors.phone()) { <p class="error-text">{{ errors.phone() }}</p> }
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="user.email" type="email" placeholder="Email" class="input" [class.error-input]="errors.email()" required>
+      @if (errors.email()) { <p class="error-text">{{ errors.email() }}</p> }
+    </div>
+
+    <div class="input-group">
+      <input [(ngModel)]="user.password" type="password" placeholder="Password" class="input" [class.error-input]="errors.password()" required>
+      @if (errors.password()) { <p class="error-text">{{ errors.password() }}</p> }
+    </div>
+
+    <button (click)="register()" class="register-btn">Register</button>
+
+    <p class="login-text">
+      Already have an account?
+      <a routerLink="/">Login</a>
+    </p>
+
+  </div>
+
+</div>
